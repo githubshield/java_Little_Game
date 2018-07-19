@@ -11,15 +11,15 @@ import java.util.ArrayList;
 import com.hbkjxy.util.MyUtil;
 
 /**
- * ĞèÒªµÄÀà£ºÈë¿ÚÀà¡¢Ö÷Ãæ°å frame ¡¢Ìø¶¯µÄÆ¹ÅÒÇò¡£
+ * éœ€è¦çš„ç±»ï¼šå…¥å£ç±»ã€ä¸»é¢æ¿ frame ã€è·³åŠ¨çš„ä¹’ä¹“çƒã€‚
  * 
- * Æ¹ÅÒÇò£º³õÊ¼µÄËÙ¶È £¬Ö»ÓĞ  Y ·½ÏòÉÏµÄËÙ¶È¡£ x ÊÇ0. 
- * ÏòÏÂµÄËÙ¶ÈÖğ½¥µİÔö£¬y ×ø±êÒ»µ©µ½´ïÁËÆÁÄ»µÄµ×²¿£¬10£¬ ·½Ïò¸ÄÎªÏòÉÏµ¯Æğ£¬²¢ÓĞÊÊ¶ÈµÄËÙ¶ÈµÄËğºÄ¡£
- * ×îÖÕËÙ¶È±äÎª0£¬Í£Ö¹ÔÚÆÁÄ»µÄµ×²¿¡£
+ * ä¹’ä¹“çƒï¼šåˆå§‹çš„é€Ÿåº¦ ï¼Œåªæœ‰  Y æ–¹å‘ä¸Šçš„é€Ÿåº¦ã€‚ x æ˜¯0. 
+ * å‘ä¸‹çš„é€Ÿåº¦é€æ¸é€’å¢ï¼Œy åæ ‡ä¸€æ—¦åˆ°è¾¾äº†å±å¹•çš„åº•éƒ¨ï¼Œ10ï¼Œ æ–¹å‘æ”¹ä¸ºå‘ä¸Šå¼¹èµ·ï¼Œå¹¶æœ‰é€‚åº¦çš„é€Ÿåº¦çš„æŸè€—ã€‚
+ * æœ€ç»ˆé€Ÿåº¦å˜ä¸º0ï¼Œåœæ­¢åœ¨å±å¹•çš„åº•éƒ¨ã€‚
  * 
- * Èç¹ûÊÇ¶à¸öball£¬Ê¹ÓÃÈİÆ÷¹ÜÀí£¬ÔÚÊÊµ±µÄ¼ä¸ôÔö¼ÓÆÁÄ»ÖĞµÄÇò¡£Ëæ»úµÄÎ»ÖÃ¡£
+ * å¦‚æœæ˜¯å¤šä¸ªballï¼Œä½¿ç”¨å®¹å™¨ç®¡ç†ï¼Œåœ¨é€‚å½“çš„é—´éš”å¢åŠ å±å¹•ä¸­çš„çƒã€‚éšæœºçš„ä½ç½®ã€‚
  * 
- * @author yhl
+ * @author gc
  * 
  */
 
@@ -36,7 +36,7 @@ public class BallFrame extends Frame implements Runnable{
 		initRepaintThread();
 	}
 	
-	//¿ØÖÆÌí¼ÓÇòµÄËÙ¶È
+	//æ§åˆ¶æ·»åŠ çƒçš„é€Ÿåº¦
 	private int count = 0;
 	private void addBall(){
 		count ++;
@@ -45,9 +45,9 @@ public class BallFrame extends Frame implements Runnable{
 			int x = MyUtil.getRandomNumber(0, Constant.GAME_WIDTH);
 			int y = MyUtil.getRandomNumber(30, 60);
 			Ball ball = new Ball(x, y, 10, Color.BLUE);
-			//Ëæ»úµÄÌí¼ÓÇò£¬
+			//éšæœºçš„æ·»åŠ çƒï¼Œ
 			balls.add(ball);
-			//½«²»¿É¼ûµÄÇòÒÆ³ı
+			//å°†ä¸å¯è§çš„çƒç§»é™¤
 			for(int i=0;i<balls.size();i++){
 				if(!balls.get(i).isVisible())
 					balls.remove(i);
@@ -55,10 +55,10 @@ public class BallFrame extends Frame implements Runnable{
 		}
 	}
 	/**
-	 * ³õÊ¼»¯´°¿Ú
+	 * åˆå§‹åŒ–çª—å£
 	 */
 	private void initFrame(){
-		setTitle("ÎÒµÄĞ¡ÓÎÏ·");
+		setTitle("æˆ‘çš„å°æ¸¸æˆ");
 		setSize(Constant.GAME_WIDTH, Constant.GAME_HEIGHT);
 		setLocation(Constant.SYS_SCREEN_W-Constant.GAME_WIDTH>>1, Constant.SYS_SCREEN_H-Constant.GAME_HEIGHT>>1);
 		
@@ -75,16 +75,16 @@ public class BallFrame extends Frame implements Runnable{
 	
 	
 	public void update(Graphics g) {
-		//µÃµ½Í¼Æ¬¶ÔÏóµÄ»­±Ê
+		//å¾—åˆ°å›¾ç‰‡å¯¹è±¡çš„ç”»ç¬”
 		if(imgG == null){
 			imgG = bufImg.getGraphics();
 		}
 		
 		drawBk(imgG);
-		//ËùÓĞµÄ»æÖÆµÄ¹¤×÷¶¼ÈÃÍ¼Æ¬»­±ÊÀ´Íê³É¡£
+		//æ‰€æœ‰çš„ç»˜åˆ¶çš„å·¥ä½œéƒ½è®©å›¾ç‰‡ç”»ç¬”æ¥å®Œæˆã€‚
 		paintBall(imgG);
 		
-		//Ê¹ÓÃÏµÍ³»­±Ê½«Í¼Æ¬»æÖÆµ½frame ÉÏ
+		//ä½¿ç”¨ç³»ç»Ÿç”»ç¬”å°†å›¾ç‰‡ç»˜åˆ¶åˆ°frame ä¸Š
 		g.drawImage(bufImg, 0, 0, null);
 	}
 	
@@ -95,7 +95,7 @@ public class BallFrame extends Frame implements Runnable{
 	
 	
 	/**
-	 * »æÖÆÇò
+	 * ç»˜åˆ¶çƒ
 	 * @param g
 	 */
 	private void paintBall(Graphics g){
