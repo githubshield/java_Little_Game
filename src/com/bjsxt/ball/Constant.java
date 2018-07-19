@@ -1,15 +1,15 @@
 package com.bjsxt.ball;
 /**
- * ÓÎÏ·µÄ³£Á¿Àà
- * @author yhl
+ * æ¸¸æˆçš„å¸¸é‡ç±»
+ * @author gc
  *
  */
 public class Constant {
 	
-	//ÏµÍ³ÆÁÄ»µÄ¿í¸ß
+	//ç³»ç»Ÿå±å¹•çš„å®½é«˜
 	public static final int SYS_SCREEN_W = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 	public static final int SYS_SCREEN_H = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
-	//´°¿ÚµÄ¿í¸ß
+	//çª—å£çš„å®½é«˜
 	public static final int GAME_WIDTH 		= 700;
 	public static final int GAME_HEIGHT 	= 600;
 	
