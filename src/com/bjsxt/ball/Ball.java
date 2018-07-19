@@ -7,7 +7,7 @@ import com.sun.prism.paint.Gradient;
 
 /**
  * 自由落体的球
- * @author 
+ * @author gc
  *
  */
 public class Ball {
