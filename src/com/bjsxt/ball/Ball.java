@@ -6,19 +6,19 @@ import java.awt.Graphics;
 import com.sun.prism.paint.Gradient;
 
 /**
- * ×ÔÓÉÂäÌåµÄÇò
- * @author yhl
+ * è‡ªç”±è½ä½“çš„çƒ
+ * @author 
  *
  */
 public class Ball {
 	private int x,y;
-	//Ö¡ËÙ¶È
+	//å¸§é€Ÿåº¦
 	private int speed;
 	private int width;
 	private Color color;
 	private int dir;
 	private boolean visible = true;
-	//¼ÓËÙ¶È
+	//åŠ é€Ÿåº¦
 	public static final int ACC_SPEED = 1 ;
 	
 	public static final int DIR_UP = 1;
@@ -35,11 +35,11 @@ public class Ball {
 	}
 	
 	/**
-	 * Çò»æÖÆ×ÔÉíµÄ·½·¨
+	 * çƒç»˜åˆ¶è‡ªèº«çš„æ–¹æ³•
 	 * @param g
 	 */
 	public void draw(Graphics g){
-		//ÉèÖÃ»­±ÊµÄÑÕÉ«
+		//è®¾ç½®ç”»ç¬”çš„é¢œè‰²
 		g.setColor(color);
 		g.fillOval(x, y, width, width);
 		
@@ -47,7 +47,7 @@ public class Ball {
 	}
 	
 	/**
-	 * ´¦ÀíÇòµÄÂß¼­
+	 * å¤„ç†çƒçš„é€»è¾‘
 	 */
 	private void move(){
 		if(dir == DIR_UP){
@@ -62,7 +62,7 @@ public class Ball {
 			speed += ACC_SPEED;
 			if(y >= Constant.GAME_HEIGHT-width){
 				dir = DIR_UP;
-				//ËÙ¶È´¥µØËğºÄ
+				//é€Ÿåº¦è§¦åœ°æŸè€—
 				speed -= 4;
 				speed = speed < 0 ? 0 : speed;
 				if(speed == 0){
