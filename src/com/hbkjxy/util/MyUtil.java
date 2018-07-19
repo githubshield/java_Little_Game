@@ -2,8 +2,8 @@ package com.hbkjxy.util;
 
 import java.awt.Color;
 /**
- * ¹¤¾ßÀà£¬Ìá¹©¸÷ÖÖ¹¤¾ß·½·¨
- * @author yhl
+ * å·¥å…·ç±»ï¼Œæä¾›å„ç§å·¥å…·æ–¹æ³•
+ * @author gc
  *
  */
 public class MyUtil {
@@ -11,17 +11,17 @@ public class MyUtil {
 	}
 	
 	/**
-	 * µÃµ½Ö¸¶¨Çø¼äµÄËæ»úÊı
-	 * @param min Çø¼äµÄ×îĞ¡Öµ  °üº¬
-	 * @param max Çø¼äµÄ×î´óÖµ  ²»°üº¬
-	 * @return  ·µ»ØËæ»úÊı
+	 * å¾—åˆ°æŒ‡å®šåŒºé—´çš„éšæœºæ•°
+	 * @param min åŒºé—´çš„æœ€å°å€¼  åŒ…å«
+	 * @param max åŒºé—´çš„æœ€å¤§å€¼  ä¸åŒ…å«
+	 * @return  è¿”å›éšæœºæ•°
 	 */
 	public static final int getRandomNumber(int min, int max){
 		return (int)(Math.random()*(max-min)+min);
 	}
 	
 	/**
-	 * µÃµ½Ëæ»úµÄÑÕÉ«
+	 * å¾—åˆ°éšæœºçš„é¢œè‰²
 	 * @return
 	 */
 	public static final Color getRandomColor(){
@@ -29,13 +29,13 @@ public class MyUtil {
 	}
 	
 	/**
-	 * ÅĞ¶ÏÖ¸¶¨¸ÅÂÊµÄÊ±¼ä£¬±¾´ÎÊÇ·ñ·¢ÉúµÄ
-	 * @param percent  Ö¸¶¨ÊÂ¼şµÄ¸ÅÂÊ
-	 * @return  Èç¹û·¢ÉúÁË£¬·µ»Ø true £¬·ñÔò  false¡£
+	 * åˆ¤æ–­æŒ‡å®šæ¦‚ç‡çš„æ—¶é—´ï¼Œæœ¬æ¬¡æ˜¯å¦å‘ç”Ÿçš„
+	 * @param percent  æŒ‡å®šäº‹ä»¶çš„æ¦‚ç‡
+	 * @return  å¦‚æœå‘ç”Ÿäº†ï¼Œè¿”å› true ï¼Œå¦åˆ™  falseã€‚
 	 */
 	public static boolean isHappened(double percent){//0.3
 		//
-//		Math.random()  µÃµ½Ò»¸öËæ»úµÄĞ¡Êı[0.0~1.0)  Math.random() µÃµ½µÄ½á¹ûĞ¡ÓÚ0.3µÄ¸ÅÂÊ¾ÍÊÇ30%
+//		Math.random()  å¾—åˆ°ä¸€ä¸ªéšæœºçš„å°æ•°[0.0~1.0)  Math.random() å¾—åˆ°çš„ç»“æœå°äº0.3çš„æ¦‚ç‡å°±æ˜¯30%
 		return Math.random() < percent;
 	}
 	
